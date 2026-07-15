@@ -3,14 +3,17 @@ class Solution {
         if(x<0) return false;
         else if(x==0) return true;
         else{
-           String s=String.valueOf(x);
-           char[] st=s.toCharArray();
-            int n=st.length-1;
-            for(int i=0;i<(st.length)/2;i++){
-                    if(st[n]==st[i]) n--;
-                    else return false;
+            int t=x;
+            int s=0;
+            while(x!=0){
+                int mod=x%10;
+                s=s*10+mod;
+                x/=10;
             }
-            return true;
+            if(t==s){
+                    return true;
+            }
+            return false;
         }
     }
 }
